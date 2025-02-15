@@ -16,12 +16,16 @@ export class ScrapingService {
   async findAll() {
     const scraping = new PlaywrightCrawler({
       requestHandler: async ({ page }) => {
-        const title = await page.title()
-        Logger.debug(`Title is '${title}'`)
+        const listOrders = await page.$eval(
+          '.order-item-header-status-text',
+          (elements) => elements.textContent,
+        )
+        Logger.debug(listOrders)
       },
+
       maxRequestsPerCrawl: 1,
     })
-    await scraping.run(['https://crawlee.dev'])
+    await scraping.run(['https://www.aliexpress.com/p/order/index.html'])
     const data = await scraping.getData()
     return {
       data,
