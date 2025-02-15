@@ -1,0 +1,52 @@
+{
+  "requestsFinished": 0,
+  "requestsFailed": 1,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 1,
+  "requestsFinishedPerMinute": 0,
+  "requestMinDurationMillis": null,
+  "requestMaxDurationMillis": 0,
+  "requestTotalFailedDurationMillis": 25322,
+  "requestTotalFinishedDurationMillis": 0,
+  "crawlerStartedAt": "2025-02-15T05:21:04.056Z",
+  "crawlerFinishedAt": "2025-02-15T05:21:58.628Z",
+  "statsPersistedAt": "2025-02-15T05:21:58.628Z",
+  "crawlerRuntimeMillis": 57079,
+  "crawlerLastStartTimestamp": 1739596861549,
+  "requestRetryHistogram": [
+    null,
+    null,
+    null,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": 25322,
+  "requestAvgFinishedDurationMillis": null,
+  "requestTotalDurationMillis": 25322,
+  "requestsTotal": 1,
+  "requestsWithStatusCode": {
+    "200": 4
+  },
+  "errors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:19:39": {
+      "missing error code": {
+        "Error": {
+          "page.$eval: Failed to find element matching selector \".order-item-header-status-text\"": {
+            "count": 1
+          }
+        }
+      }
+    }
+  },
+  "retryErrors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:19:39": {
+      "missing error code": {
+        "Error": {
+          "page.$eval: Failed to find element matching selector \".order-item-header-status-text\"": {
+            "count": 3
+          }
+        }
+      }
+    }
+  }
+}
