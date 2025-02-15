@@ -6,15 +6,15 @@
   "tables": [
     {
       "columns": {
-        "id": {
-          "name": "id",
-          "type": "uuid",
+        "uuid": {
+          "name": "uuid",
+          "type": "varchar(255)",
           "unsigned": false,
           "autoincrement": false,
           "primary": false,
           "nullable": false,
-          "default": "uuid_generate_v4()",
-          "mappedType": "uuid"
+          "length": 255,
+          "mappedType": "string"
         },
         "title": {
           "name": "title",
@@ -52,7 +52,7 @@
         {
           "keyName": "scraping_pkey",
           "columnNames": [
-            "id"
+            "uuid"
           ],
           "composite": false,
           "constraint": true,
