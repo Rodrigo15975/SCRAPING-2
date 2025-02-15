@@ -15,15 +15,33 @@ export class ScrapingService {
 
   async findAll() {
     const scraping = new PlaywrightCrawler({
-      requestHandler: async ({ page }) => {
-        await page.waitForSelector('.order-wrap', { timeout: 10000 })
-        const listOrders = await page.$$('.order-wrap')
-        console.log({ data: listOrders })
+      launchContext: {
+        launchOptions: {
+          headless: true,
+        },
+        userAgent:
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
-
+      requestHandler: async ({ page }) => {
+        await page.waitForSelector('.ja_f', {
+          timeout: 10000,
+          state: 'visible',
+        })
+        const listOrders = await page.$$eval('.ja_f', (e) =>
+          e.map((el) => ({
+            img: el.querySelector('img')?.getAttribute('src'),
+          })),
+        )
+        console.log({
+          listOrders,
+        })
+      },
       maxRequestsPerCrawl: 1,
+      headless: true,
     })
-    await scraping.run(['https://www.aliexpress.com/p/order/index.html'])
+    await scraping.run([
+      'https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194dbYGdea',
+    ])
     const data = await scraping.getData()
     return {
       data,
