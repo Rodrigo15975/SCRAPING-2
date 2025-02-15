@@ -1,52 +1,29 @@
 {
-  "requestsFinished": 0,
-  "requestsFailed": 1,
-  "requestsRetries": 1,
-  "requestsFailedPerMinute": 1,
-  "requestsFinishedPerMinute": 0,
-  "requestMinDurationMillis": null,
-  "requestMaxDurationMillis": 0,
-  "requestTotalFailedDurationMillis": 25322,
-  "requestTotalFinishedDurationMillis": 0,
-  "crawlerStartedAt": "2025-02-15T05:21:04.056Z",
-  "crawlerFinishedAt": "2025-02-15T05:21:58.628Z",
-  "statsPersistedAt": "2025-02-15T05:21:58.628Z",
-  "crawlerRuntimeMillis": 57079,
-  "crawlerLastStartTimestamp": 1739596861549,
+  "requestsFinished": 1,
+  "requestsFailed": 0,
+  "requestsRetries": 0,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 3,
+  "requestMinDurationMillis": 15539,
+  "requestMaxDurationMillis": 15539,
+  "requestTotalFailedDurationMillis": 0,
+  "requestTotalFinishedDurationMillis": 15539,
+  "crawlerStartedAt": "2025-02-15T05:27:53.074Z",
+  "crawlerFinishedAt": "2025-02-15T05:28:13.744Z",
+  "statsPersistedAt": "2025-02-15T05:28:13.744Z",
+  "crawlerRuntimeMillis": 21868,
+  "crawlerLastStartTimestamp": 1739597271876,
   "requestRetryHistogram": [
-    null,
-    null,
-    null,
     1
   ],
   "statsId": 0,
-  "requestAvgFailedDurationMillis": 25322,
-  "requestAvgFinishedDurationMillis": null,
-  "requestTotalDurationMillis": 25322,
+  "requestAvgFailedDurationMillis": null,
+  "requestAvgFinishedDurationMillis": 15539,
+  "requestTotalDurationMillis": 15539,
   "requestsTotal": 1,
   "requestsWithStatusCode": {
-    "200": 4
+    "200": 1
   },
-  "errors": {
-    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:19:39": {
-      "missing error code": {
-        "Error": {
-          "page.$eval: Failed to find element matching selector \".order-item-header-status-text\"": {
-            "count": 1
-          }
-        }
-      }
-    }
-  },
-  "retryErrors": {
-    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:19:39": {
-      "missing error code": {
-        "Error": {
-          "page.$eval: Failed to find element matching selector \".order-item-header-status-text\"": {
-            "count": 3
-          }
-        }
-      }
-    }
-  }
+  "errors": {},
+  "retryErrors": {}
 }

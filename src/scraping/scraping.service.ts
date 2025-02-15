@@ -1,5 +1,5 @@
 import { EntityManager } from '@mikro-orm/postgresql'
-import { Injectable, Logger } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { UpdateScrapingDto } from './dto/update-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
@@ -16,11 +16,9 @@ export class ScrapingService {
   async findAll() {
     const scraping = new PlaywrightCrawler({
       requestHandler: async ({ page }) => {
-        const listOrders = await page.$eval(
-          '.order-item-header-status-text',
-          (elements) => elements.textContent,
-        )
-        Logger.debug(listOrders)
+        await page.waitForSelector('.order-wrap', { timeout: 10000 })
+        const listOrders = await page.$$('.order-wrap')
+        console.log({ data: listOrders })
       },
 
       maxRequestsPerCrawl: 1,
