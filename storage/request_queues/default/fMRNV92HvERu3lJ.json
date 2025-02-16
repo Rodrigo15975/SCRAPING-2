@@ -1,9 +1,0 @@
-{
-	"id": "fMRNV92HvERu3lJ",
-	"json": "{\"id\":\"fMRNV92HvERu3lJ\",\"url\":\"https://www.aliexpress.com/p/order/index.html\",\"loadedUrl\":\"https://login.aliexpress.com/?return_url=https%3A%2F%2Fwww.aliexpress.com%2Fp%2Forder%2Findex.html\",\"uniqueKey\":\"https://www.aliexpress.com/p/order/index.html\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-02-15T05:28:09.314Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "https://www.aliexpress.com/p/order/index.html",
-	"url": "https://www.aliexpress.com/p/order/index.html"
-}

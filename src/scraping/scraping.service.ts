@@ -29,7 +29,7 @@ export class ScrapingService {
         })
         const listOrders = await page.$$eval('.ja_f', (e) =>
           e.map((el) => ({
-            img: el.querySelector('img')?.getAttribute('src'),
+            img: [...el.querySelectorAll('img')].map((img) => img.src),
           })),
         )
         console.log({
