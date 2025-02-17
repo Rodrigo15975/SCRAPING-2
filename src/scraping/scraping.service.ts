@@ -1,7 +1,6 @@
 import { EntityManager } from '@mikro-orm/postgresql'
 import { Injectable } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
-import { UpdateScrapingDto } from './dto/update-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
 import { PlaywrightCrawler } from 'crawlee'
 @Injectable()
@@ -46,19 +45,5 @@ export class ScrapingService {
     return {
       data,
     }
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} scraping`
-  }
-
-  update(id: number, updateScrapingDto: UpdateScrapingDto) {
-    console.log(updateScrapingDto)
-
-    return `This action updates a #${id} scraping`
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} scraping`
   }
 }
