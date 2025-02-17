@@ -22,14 +22,13 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page }) => {
-        await page.waitForFunction(() => {
-          return document.querySelector('.multi--titleText--nXeOvyr')
+        const title = await page.$$eval(
+          '.multi--titleText--nXeOvyr',
+          (elements) => elements.map((element) => element.textContent || ''),
+        )
+        console.log({
+          title,
         })
-        await page.waitForSelector('.multi--titleText--nXeOvyr', {
-          timeout: 5000,
-        })
-        const title = await page.$('.multi--titleText--nXeOvyr')
-        console.log({ title })
       },
       maxRequestsPerCrawl: 1,
       headless: true,
