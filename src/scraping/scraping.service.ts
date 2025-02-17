@@ -22,14 +22,20 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page }) => {
+        await page.waitForFunction(() => {
+          return document.querySelector('.multi--titleText--nXeOvyr')
+        })
+        await page.waitForSelector('.multi--titleText--nXeOvyr', {
+          timeout: 5000,
+        })
         const title = await page.$('.multi--titleText--nXeOvyr')
-        console.log(title)
+        console.log({ title })
       },
       maxRequestsPerCrawl: 1,
       headless: true,
     })
     await scraping.run([
-      'https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194dbYGdea',
+      'https://es.aliexpress.com/w/wholesale-air-express.html',
     ])
     const data = await scraping.getData()
     return {

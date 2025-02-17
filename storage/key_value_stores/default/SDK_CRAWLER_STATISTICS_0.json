@@ -1,29 +1,37 @@
 {
-  "requestsFinished": 1,
+  "requestsFinished": 0,
   "requestsFailed": 0,
   "requestsRetries": 0,
   "requestsFailedPerMinute": 0,
-  "requestsFinishedPerMinute": 3,
-  "requestMinDurationMillis": 18986,
-  "requestMaxDurationMillis": 18986,
+  "requestsFinishedPerMinute": 0,
+  "requestMinDurationMillis": null,
+  "requestMaxDurationMillis": 0,
   "requestTotalFailedDurationMillis": 0,
-  "requestTotalFinishedDurationMillis": 18986,
-  "crawlerStartedAt": "2025-02-17T03:13:12.985Z",
-  "crawlerFinishedAt": "2025-02-17T03:13:33.903Z",
-  "statsPersistedAt": "2025-02-17T03:13:33.903Z",
-  "crawlerRuntimeMillis": 21028,
-  "crawlerLastStartTimestamp": 1739761992875,
-  "requestRetryHistogram": [
-    1
-  ],
+  "requestTotalFinishedDurationMillis": 0,
+  "crawlerStartedAt": "2025-02-17T03:30:39.028Z",
+  "crawlerFinishedAt": "2025-02-17T03:34:43.182Z",
+  "statsPersistedAt": "2025-02-17T03:34:43.182Z",
+  "crawlerRuntimeMillis": 244322,
+  "crawlerLastStartTimestamp": 1739763038860,
+  "requestRetryHistogram": [],
   "statsId": 0,
   "requestAvgFailedDurationMillis": null,
-  "requestAvgFinishedDurationMillis": 18986,
-  "requestTotalDurationMillis": 18986,
-  "requestsTotal": 1,
+  "requestAvgFinishedDurationMillis": null,
+  "requestTotalDurationMillis": 0,
+  "requestsTotal": 0,
   "requestsWithStatusCode": {
-    "200": 1
+    "200": 3
   },
   "errors": {},
-  "retryErrors": {}
+  "retryErrors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:25:20": {
+      "missing error code": {
+        "TimeoutError": {
+          "page.waitForFunction: Timeout 30000ms exceeded.": {
+            "count": 3
+          }
+        }
+      }
+    }
+  }
 }
