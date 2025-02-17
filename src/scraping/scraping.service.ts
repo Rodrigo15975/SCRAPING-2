@@ -24,9 +24,13 @@ export class ScrapingService {
       requestHandler: async ({ page }) => {
         const title = await page.$$eval(
           '.multi--titleText--nXeOvyr',
-          (elements) => elements.map((element) => element.textContent || ''),
+          (elements) =>
+            elements.map((element) => ({
+              title: element.textContent || '',
+            })),
         )
         console.log({
+          count: title.length,
           title,
         })
       },
