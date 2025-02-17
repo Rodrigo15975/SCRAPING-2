@@ -22,16 +22,8 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page }) => {
-        const listOrders = await page.$$eval(
-          '.multi--titleText--nXeOvyr',
-          (e) =>
-            e.map((el) => ({
-              text: el.textContent,
-            })),
-        )
-        console.log({
-          listOrders,
-        })
+        const title = await page.$('.multi--titleText--nXeOvyr')
+        console.log(title)
       },
       maxRequestsPerCrawl: 1,
       headless: true,
