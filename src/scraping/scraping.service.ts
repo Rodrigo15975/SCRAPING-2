@@ -26,10 +26,12 @@ export class ScrapingService {
           timeout: 10000,
           state: 'visible',
         })
-        const listOrders = await page.$$eval('.ja_f', (e) =>
-          e.map((el) => ({
-            img: [...el.querySelectorAll('img')].map((img) => img.src),
-          })),
+        const listOrders = await page.$$eval(
+          '.list--galleryWrapper--29HRJT4',
+          (e) =>
+            e.map((el) => ({
+              links: [...el.querySelectorAll('a')].map((img) => img.href),
+            })),
         )
         console.log({
           listOrders,
