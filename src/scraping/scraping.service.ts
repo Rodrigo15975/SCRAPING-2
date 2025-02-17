@@ -22,15 +22,15 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page }) => {
-        await page.waitForSelector('.list--galleryWrapper--29HRJT4', {
+        await page.waitForSelector('.multi--titleText--nXeOvyr', {
           timeout: 10000,
           state: 'visible',
         })
         const listOrders = await page.$$eval(
-          '.list--galleryWrapper--29HRJT4',
+          '.multi--titleText--nXeOvyr',
           (e) =>
             e.map((el) => ({
-              links: [...el.querySelectorAll('a')].map((img) => img.href),
+              text: el.textContent,
             })),
         )
         console.log({
