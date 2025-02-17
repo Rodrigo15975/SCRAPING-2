@@ -14,6 +14,7 @@ export class ScrapingService {
 
   async findAll() {
     const dataScraping: any[] = []
+
     const scraping = new PlaywrightCrawler({
       launchContext: {
         launchOptions: {
@@ -23,24 +24,18 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page, request }) => {
-        console.log(`Scraping: ${request.url}`)
-        await page.waitForSelector('.multi--titleText--nXeOvyr', {
-          timeout: 10000,
+        console.log({
+          title: await page.title(),
+          url: request.url,
         })
-        const titles = await page.$$eval(
-          '.multi--titleText--nXeOvyr',
-          (elements) => elements.map((el) => el.textContent?.trim() || ''),
-        )
-        console.log({ titles })
-        dataScraping.push(...titles)
+        console.log(`Scraping: ${request.url}`)
       },
-      maxRequestsPerCrawl: 5,
+      maxRequestsPerCrawl: 1,
       headless: true,
       persistCookiesPerSession: false,
+      useSessionPool: false,
     })
-    await scraping.run([
-      'https://es.aliexpress.com/w/wholesale-air-express.html',
-    ])
+    await scraping.run(['https://www.amazon.com/s?k=computers'])
     return {
       dataScraping,
     }
