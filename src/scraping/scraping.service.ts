@@ -22,10 +22,6 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page }) => {
-        await page.waitForSelector('.multi--titleText--nXeOvyr', {
-          timeout: 10000,
-          state: 'visible',
-        })
         const listOrders = await page.$$eval(
           '.multi--titleText--nXeOvyr',
           (e) =>
