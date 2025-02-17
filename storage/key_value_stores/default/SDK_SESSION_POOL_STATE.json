@@ -1,0 +1,319 @@
+{
+  "usableSessionsCount": 2,
+  "retiredSessionsCount": 0,
+  "sessions": [
+    {
+      "id": "session_LFvODCfhew",
+      "cookieJar": {
+        "version": "tough-cookie@5.1.1",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": []
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2025-02-17T04:03:13.602Z",
+      "createdAt": "2025-02-17T03:13:13.602Z",
+      "usageCount": 0,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    },
+    {
+      "id": "session_pi3tKX9gjO",
+      "cookieJar": {
+        "version": "tough-cookie@5.1.1",
+        "storeType": "MemoryCookieStore",
+        "rejectPublicSuffixes": true,
+        "enableLooseMode": false,
+        "allowSpecialUseDomain": true,
+        "prefixSecurity": "silent",
+        "cookies": [
+          {
+            "key": "ali_apache_id",
+            "value": "33.3.55.188.1739761997265.337332.8",
+            "expires": "2026-03-24T03:13:16.885Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.318Z",
+            "lastAccessed": "2025-02-17T03:13:32.318Z"
+          },
+          {
+            "key": "xman_us_f",
+            "value": "x_locale=es_ES&x_l=0&x_c_chg=1&acs_rt=b76a569073a94946bd0845f0300af3ad",
+            "expires": "2026-03-24T03:13:16.886Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.334Z",
+            "lastAccessed": "2025-02-17T03:13:32.334Z"
+          },
+          {
+            "key": "intl_common_forever",
+            "value": "vqwcmdtT6g9rMO6xfUPbUYyYXDR6Tj8/WSOsZbXzrXgVgMwEeGVlfQ==",
+            "expires": "2026-03-24T03:13:16.894Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.341Z",
+            "lastAccessed": "2025-02-17T03:13:32.341Z"
+          },
+          {
+            "key": "intl_locale",
+            "value": "es_ES",
+            "expires": "2025-02-17T04:03:32.314Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.342Z",
+            "lastAccessed": "2025-02-17T03:13:32.342Z"
+          },
+          {
+            "key": "xman_f",
+            "value": "rQBX7qocEh4VclHHngfwRheZQW7qqofHj2A4APH20C1GdI+uaNC+HyJgzJqpCYHFChSyDg9hZXVzQ3TihpoAzMJpc7ZPMTDLhhcagUs9FOGT5Jy7MF6BrA==",
+            "expires": "2026-03-24T03:13:16.894Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.342Z",
+            "lastAccessed": "2025-02-17T03:13:32.342Z"
+          },
+          {
+            "key": "acs_usuc_t",
+            "value": "x_csrf=w3sbifno8l7f&acs_rt=b76a569073a94946bd0845f0300af3ad",
+            "expires": "2025-02-17T04:03:32.314Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.342Z",
+            "lastAccessed": "2025-02-17T03:13:32.342Z"
+          },
+          {
+            "key": "xman_t",
+            "value": "eHT2OeEozaN76nZdH2UqTXBkBuqq1uJPg9ZvTEICF/46bOPT7llENsEQrqU8m6kX",
+            "expires": "2025-05-18T03:13:16.894Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "httpOnly": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.343Z",
+            "lastAccessed": "2025-02-17T03:13:32.343Z"
+          },
+          {
+            "key": "lwrid",
+            "value": "AgGVEeVe3WNwABXLwShBX39uI%2Bis",
+            "expires": "2026-02-17T03:13:19.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.343Z",
+            "lastAccessed": "2025-02-17T03:13:32.343Z"
+          },
+          {
+            "key": "join_status",
+            "expires": "2025-03-19T03:13:20.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.343Z",
+            "lastAccessed": "2025-02-17T03:13:32.343Z"
+          },
+          {
+            "key": "xlly_s",
+            "value": "1",
+            "expires": "2025-02-20T03:13:23.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.344Z",
+            "lastAccessed": "2025-02-17T03:13:32.344Z"
+          },
+          {
+            "key": "_m_h5_tk",
+            "value": "fe5626f55efcc590f175c8e147a3f10a_1739764075083",
+            "expires": "2025-02-24T03:13:24.212Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.346Z",
+            "lastAccessed": "2025-02-17T03:13:32.346Z"
+          },
+          {
+            "key": "_m_h5_tk_enc",
+            "value": "347e4ea46686de755e7bf244d209c87a",
+            "expires": "2025-02-24T03:13:24.212Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.346Z",
+            "lastAccessed": "2025-02-17T03:13:32.346Z"
+          },
+          {
+            "key": "lwrtk",
+            "value": "AAEEZ7MZ0OtOdaP0TTjH6vLMi9O6whmvW62h9o8q0IpLa7pUbPr2yBc=",
+            "expires": "2025-08-16T03:13:24.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.346Z",
+            "lastAccessed": "2025-02-17T03:13:32.346Z"
+          },
+          {
+            "key": "_gcl_au",
+            "value": "1.1.1937908471.1739762006",
+            "expires": "2025-05-18T03:13:25.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "aep_usuc_f",
+            "value": "site=esp&c_tp=PEN&region=PE&b_locale=es_ES&ae_u_p_s=2",
+            "expires": "2026-02-17T03:13:26.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "epssw",
+            "value": "7*cnsss6UyJ685CeDjssss6G8a2ZXOndwZkgolG8McQDQaszuJksP130IOhtSS7w8WT2ysus7guE3vTassssssI63zhVCzQzYL1uscJsTF-sIRmy8rsssFsUI1P1EmHOHaCV9_kxGMPLoecmM47wQv4wxJSlvEZD4vM5FPLC5jZ6ZwIXYDOFIt6sgLOW9JnWMOOHeIOijuOe0_HTitCondBRutussgXEp37pMzORaZ3hDaNHoN_jOtle_wNrEhBoLhwazI3sS6dF4h6SMXXNc4Mxhsss6hsRQJBUss0sIcXD5hWv2psV2cisuU3kBhPs0c3ABh7dD1GE..",
+            "expires": "2025-08-16T03:13:26.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "isg",
+            "value": "BNHRAZN4UlL2NL5GikSAdQ8d691rPkWwkW7KbbNmzRi3WvGs-45VgH-4-Da80t3o",
+            "expires": "2025-08-16T03:13:22.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "tfstk",
+            "value": "glJrM19XGYHzsRJr-iXUggovdHcR3T0_Yp_CxHxhVabo2aOVLELyNy6COJ7HxZ95P36u2IL6j89Sw9wFe9Bn5VMsCgKRp9x2z82OynxAxmsuSjkxz9Bn5qGCqFZCpFIMmMdHmmSCAy4H-_x0iG7cq8XH-ZfcjGalK9Yn0xjhv82hr_XDmZIhKwYhKmWmpFfh_-SdZD8zE4VoX_fPS3b4LepVq_PJqZy3KKRVaN2CuJ2H3gKj1W-YQX_M6a11gEDbU9-cYeC9dVeRr1JvT1vs8-Kc6a6WEOlLSNAvuhCHnV2FDn-DO6Jj7x5Xn3dfgI3xCFWy81vlgkmp0nRc3BWE9PbMME-OtK0gLid2yKWXEDGRFCt6p1voUPQf6M8d6pgTeafh44UdmuJXppHLT_jA0Niq0BSA2f9nULmQ9WC7ki7sq0VL9_jA0Niq0WFdwUSV500l.",
+            "expires": "2025-08-16T03:13:22.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "cna",
+            "value": "V5c5IDVb8WMCAbMBlXLUtC3v",
+            "expires": "2026-03-24T03:13:29.428Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "__rtbh.lid",
+            "value": "%7B%22eventType%22%3A%22lid%22%2C%22id%22%3A%22P2RnSLTeFZS3XKVOQNDg%22%2C%22expiryDate%22%3A%222026-02-17T03%3A13%3A29.949Z%22%7D",
+            "expires": "2026-02-17T03:13:29.000Z",
+            "domain": "es.aliexpress.com",
+            "path": "/",
+            "secure": true,
+            "hostOnly": true,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "_gid",
+            "value": "GA1.2.1340486522.1739762010",
+            "expires": "2025-02-18T03:13:30.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "_ga_VED1YSGNC7",
+            "value": "GS1.1.1739762010.1.0.1739762010.60.0.0",
+            "expires": "2026-03-24T03:13:30.281Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "_ga",
+            "value": "GA1.1.2123577599.1739762010",
+            "expires": "2026-03-24T03:13:30.282Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "_gat",
+            "value": "1",
+            "expires": "2025-02-17T03:14:30.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "_fbp",
+            "value": "fb.1.1739762010520.622141252515622400",
+            "expires": "2025-05-18T03:13:30.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.347Z",
+            "lastAccessed": "2025-02-17T03:13:32.347Z"
+          },
+          {
+            "key": "RT",
+            "value": "\"z=1&dm=aliexpress.com&si=cd2e5431-c035-44b7-a631-0fe94cdf3d29&ss=m78hdecp&sl=1&tt=dpv&rl=1&ld=dq0\"",
+            "expires": "2025-02-24T03:13:32.000Z",
+            "domain": "aliexpress.com",
+            "path": "/",
+            "hostOnly": false,
+            "creation": "2025-02-17T03:13:32.348Z",
+            "lastAccessed": "2025-02-17T03:13:32.348Z"
+          }
+        ]
+      },
+      "userData": {},
+      "maxErrorScore": 3,
+      "errorScoreDecrement": 0.5,
+      "expiresAt": "2025-02-17T04:03:13.612Z",
+      "createdAt": "2025-02-17T03:13:13.612Z",
+      "usageCount": 2,
+      "maxUsageCount": 50,
+      "errorScore": 0
+    }
+  ]
+}
