@@ -22,7 +22,8 @@ export class ScrapingService {
         userAgent:
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
-      requestHandler: async ({ page }) => {
+      requestHandler: async ({ page, request }) => {
+        console.log(`Scraping: ${request.url}`)
         await page.waitForSelector('.multi--titleText--nXeOvyr', {
           timeout: 10000,
         })
@@ -33,8 +34,9 @@ export class ScrapingService {
         console.log({ titles })
         dataScraping.push(...titles)
       },
-      maxRequestsPerCrawl: 2,
+      maxRequestsPerCrawl: 5,
       headless: true,
+      persistCookiesPerSession: false,
     })
     await scraping.run([
       'https://es.aliexpress.com/w/wholesale-air-express.html',
