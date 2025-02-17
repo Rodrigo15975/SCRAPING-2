@@ -1,6 +1,6 @@
 {
 	"id": "bYXpax5T6wsZmhl",
-	"json": "{\"id\":\"bYXpax5T6wsZmhl\",\"url\":\"https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194dbYGdea\",\"loadedUrl\":\"https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194dbYGdea\",\"uniqueKey\":\"https://es.aliexpress.com?spm=a2g0o.order_list.logo.1.21ef194dbYGdea\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-02-17T02:14:27.770Z\"}",
+	"json": "{\"id\":\"bYXpax5T6wsZmhl\",\"url\":\"https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194dbYGdea\",\"loadedUrl\":\"https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194dbYGdea\",\"uniqueKey\":\"https://es.aliexpress.com?spm=a2g0o.order_list.logo.1.21ef194dbYGdea\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-02-17T02:16:56.763Z\"}",
 	"method": "GET",
 	"orderNo": null,
 	"retryCount": 0,
