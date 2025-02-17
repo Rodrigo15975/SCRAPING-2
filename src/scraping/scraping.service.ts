@@ -13,6 +13,7 @@ export class ScrapingService {
   }
 
   async findAll() {
+    const dataScraping: any[] = []
     const scraping = new PlaywrightCrawler({
       launchContext: {
         launchOptions: {
@@ -22,17 +23,16 @@ export class ScrapingService {
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
       },
       requestHandler: async ({ page }) => {
-        const title = await page.$$eval(
-          '.multi--titleText--nXeOvyr',
-          (elements) =>
-            elements.map((element) => ({
-              title: element.textContent || '',
-            })),
-        )
-        console.log({
-          count: title.length,
-          title,
+        await page.waitForFunction(() => {
+          return !!document.querySelector('.multi--titleText--nXeOvyr')
         })
+        await page.waitForSelector('.multi--titleText--nXeOvyr')
+        // Extraer títulos
+        const titles = await page.$$eval(
+          '.multi--titleText--nXeOvyr',
+          (elements) => elements.map((el) => el.textContent?.trim() || ''),
+        )
+        dataScraping.push(...titles)
       },
       maxRequestsPerCrawl: 1,
       headless: true,
@@ -40,9 +40,8 @@ export class ScrapingService {
     await scraping.run([
       'https://es.aliexpress.com/w/wholesale-air-express.html',
     ])
-    const data = await scraping.getData()
     return {
-      data,
+      dataScraping,
     }
   }
 }
