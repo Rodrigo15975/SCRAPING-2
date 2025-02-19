@@ -1,9 +1,0 @@
-{
-	"id": "rkJ2Oh8Gm9dTzL4",
-	"json": "{\"id\":\"rkJ2Oh8Gm9dTzL4\",\"url\":\"https://www.amazon.com/s?k=computers\",\"loadedUrl\":\"https://www.amazon.com/s?k=computers\",\"uniqueKey\":\"computers:1739777225034\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-02-17T07:27:19.712Z\"}",
-	"method": "GET",
-	"orderNo": null,
-	"retryCount": 0,
-	"uniqueKey": "computers:1739777225034",
-	"url": "https://www.amazon.com/s?k=computers"
-}
