@@ -1,6 +1,7 @@
 import { Controller, Get, Post } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
-import CryptoJS from 'crypto-js'
+import * as CryptoJS from 'crypto-js'
+
 @Controller('auth')
 export class AuthController {
   constructor(private readonly jwtService: JwtService) {}
@@ -14,20 +15,27 @@ export class AuthController {
       { sub: 1 },
       { expiresIn: '1d' },
     )
-
-    // Encriptar token antes de almacenarlo
+    const accessTokenEncrypted = CryptoJS.AES.encrypt(
+      accessToken,
+      'secretKey',
+      {
+        format: CryptoJS.format.OpenSSL,
+      },
+    )
     const encryptedRefreshToken = CryptoJS.AES.encrypt(
       refreshToken,
       'secretKey',
-    )
-    return {
-      accessToken,
-      refreshToken: encryptedRefreshToken,
-    }
+    ).toString()
+    const decodedTokenRefresh = CryptoJS.AES.decrypt(
+      encryptedRefreshToken,
+      'secretKey',
+    ).toString(CryptoJS.enc.Utf8)
 
-    // const tenantId = 'default' // ID del inquilino (puede ser una cadena predeterminada)
-    // const userId = await Session.createNewSession()
-    // return { message: 'Sesión creada correctamente' }
+    return {
+      decodedTokenRefresh,
+      accessTokenEncrypted,
+      encryptedRefreshToken,
+    }
   }
 
   // @UseGuards(AuthGuard)
