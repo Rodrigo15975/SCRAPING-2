@@ -1,0 +1,66 @@
+{
+  "requestsFinished": 0,
+  "requestsFailed": 1,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 0,
+  "requestMinDurationMillis": null,
+  "requestMaxDurationMillis": 0,
+  "requestTotalFailedDurationMillis": 30982,
+  "requestTotalFinishedDurationMillis": 0,
+  "crawlerStartedAt": "2025-02-19T06:39:52.522Z",
+  "crawlerFinishedAt": "2025-02-19T06:41:20.733Z",
+  "statsPersistedAt": "2025-02-19T06:41:20.733Z",
+  "crawlerRuntimeMillis": 88290,
+  "crawlerLastStartTimestamp": 1739947192443,
+  "requestRetryHistogram": [
+    null,
+    null,
+    null,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": 30982,
+  "requestAvgFinishedDurationMillis": null,
+  "requestTotalDurationMillis": 30982,
+  "requestsTotal": 1,
+  "requestsWithStatusCode": {
+    "200": 3
+  },
+  "errors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:28:20": {
+      "missing error code": {
+        "TimeoutError": {
+          "page.waitForSelector: Timeout 20000ms exceeded.": {
+            "count": 1
+          }
+        }
+      }
+    }
+  },
+  "retryErrors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:28:20": {
+      "missing error code": {
+        "TimeoutError": {
+          "page.waitForSelector: Timeout 20000ms exceeded.": {
+            "count": 1
+          }
+        },
+        "Error": {
+          "page.waitForSelector: Target page, context or browser has been closed": {
+            "count": 1
+          }
+        }
+      }
+    },
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\node_modules\\@crawlee\\src\\browser-pool.ts:593:19": {
+      "missing error code": {
+        "Error": {
+          "browserController.newPage() failed: uJ-O_E-3hWa9CEwUe_6OC": {
+            "count": 1
+          }
+        }
+      }
+    }
+  }
+}

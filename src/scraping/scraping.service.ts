@@ -25,29 +25,19 @@ export class ScrapingService {
       },
       headless: false,
       requestHandler: async ({ page }) => {
-        await page.waitForSelector('.MuiCard-root', {
+        await page.waitForSelector('.ho_cv', {
           timeout: 20000,
         })
-        // const selectors = ['order-item-content-img']
-
-        // const description = await page
-        //   .locator('.MuiCard-root p')
-        //   .allTextContents()
-        // const ubication = await page
-        //   .locator('.MuiCardActions-root span')
-        //   .allTextContents()
-        // const time = await page
-        //   .locator('.MuiCardActions-root p')
-        //   .allTextContents()
-
-        // console.log({ titles, description, ubication, time })
+        const selectors = ['ho_cv']
+        const allImgs = await page.$$(selectors[0])
+        this.logger.debug({ allImgs })
       },
       maxRequestsPerCrawl: 1,
     })
 
     await crawler.run([
       {
-        url: 'https://www.aliexpress.com/p/order/index.html',
+        url: 'https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194duLFvJG',
       },
     ])
     return {}
