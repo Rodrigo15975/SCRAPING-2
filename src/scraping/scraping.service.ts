@@ -1,6 +1,6 @@
 import { PlaywrightCrawler } from '@crawlee/playwright'
 import { EntityManager } from '@mikro-orm/postgresql'
-import { Injectable } from '@nestjs/common'
+import { Injectable, Logger } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
 // import { KeyValueStore } from 'crawlee'
@@ -16,6 +16,37 @@ export class ScrapingService {
     const scraping = this.em.create(Scraping, createScrapingDto)
     await this.em.persistAndFlush(scraping)
     return scraping
+  }
+  async findAllJobsLinkedin() {
+    const crawler = new PlaywrightCrawler({
+      launchContext: {
+        launchOptions: {
+          headless: true,
+        },
+        userAgent:
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
+      },
+      requestHandler: async ({ page }) => {
+        await page.waitForSelector('.MuiCard-root')
+        const html = await page.content()
+        Logger.debug(html)
+        const containerJobs = await page.$$('.MuiCard-root')
+        const title = await containerJobs[0].$eval(
+          'h6',
+          (el) => el.textContent?.trim() || 'Not title',
+        )
+        Logger.debug({
+          title,
+        })
+      },
+      maxRequestsPerCrawl: 1,
+    })
+    await crawler.run([
+      {
+        url: 'https://www.laborum.pe/job/Software-Enterprise-Services-S-A-C-/Analista-QA-QC-Junior/67ab119575d1170d056e4ee4?fromAreas=notAvailable&q=software',
+      },
+    ])
+    return {}
   }
 
   async findAll() {
@@ -43,10 +74,9 @@ export class ScrapingService {
       headless: true,
       maxRequestsPerCrawl: 5,
       persistCookiesPerSession: false,
-      useSessionPool: true, // Evita problemas de sesión
+      useSessionPool: true,
     })
 
-    // Add first URL to the queue and start the crawl.
     await crawler.run([
       {
         url: 'https://www.amazon.com/s?k=computers',
@@ -55,48 +85,4 @@ export class ScrapingService {
     ])
     return {}
   }
-
-  // async findAll() {
-  //   const dataScraping: any[] = []
-  //   const store = await KeyValueStore.open('scraping-store')
-  //   const values = await store.getValue('scraping')
-  //   console.log(values)
-
-  //   const scraping = new PlaywrightCrawler({
-  //     launchContext: {
-  //       launchOptions: {
-  //         headless: true,
-  //       },
-  //       userAgent:
-  //         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-  //     },
-  //     requestHandler: async ({ page, request }) => {
-  //       await store.setValue('scraping', {
-  //         title: await page.title(),
-  //         url: request.url,
-  //       })
-  //       dataScraping.push({
-  //         title: await page.title(),
-  //         url: request.url,
-  //       })
-
-  //       console.log({
-  //         store,
-  //         values,
-  //         title: await page.title(),
-  //         url: request.url,
-  //       })
-  //       console.log(`Scraping: ${request.url}`)
-  //     },
-  //     maxRequestsPerCrawl: 1,
-  //     headless: true,
-  //     persistCookiesPerSession: false,
-  //     useSessionPool: true,
-  //     maxConcurrency: 1,
-  //   })
-  //   await scraping.run(['https://www.amazon.com/s?k=computers'])
-  //   return {
-  //     dataScraping,
-  //   }
-  // }
 }
