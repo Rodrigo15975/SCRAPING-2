@@ -23,14 +23,17 @@ export class ScrapingService {
         userAgent:
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
       },
-      headless: false,
+      headless: true,
       requestHandler: async ({ page }) => {
-        await page.waitForSelector('.ho_cv', {
-          timeout: 20000,
+        const allImgs = await page.locator('.ho_cv').all()
+        const d: any[] = []
+        for (const img of allImgs) {
+          const src = await img.getAttribute('src')
+          d.push(src)
+        }
+        console.log({
+          d,
         })
-        const selectors = ['ho_cv']
-        const allImgs = await page.$$(selectors[0])
-        this.logger.debug({ allImgs })
       },
       maxRequestsPerCrawl: 1,
     })
