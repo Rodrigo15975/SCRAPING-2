@@ -13,6 +13,6 @@ export class ScrapingController {
 
   @Get()
   findAll() {
-    return this.scrapingService.findAll()
+    return this.scrapingService.findAllJobsLinkedin()
   }
 }
