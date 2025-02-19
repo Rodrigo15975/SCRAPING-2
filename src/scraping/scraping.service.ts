@@ -3,11 +3,8 @@ import { EntityManager } from '@mikro-orm/postgresql'
 import { Injectable, Logger } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
+// import * as CryptoJS from 'crypto-js'
 // import { KeyValueStore } from 'crawlee'
-export const userAgents = [
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-]
 
 @Injectable()
 export class ScrapingService {
@@ -17,6 +14,7 @@ export class ScrapingService {
     await this.em.persistAndFlush(scraping)
     return scraping
   }
+
   async findAllJobsLinkedin() {
     const crawler = new PlaywrightCrawler({
       launchContext: {
