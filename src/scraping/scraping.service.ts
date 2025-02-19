@@ -8,6 +8,8 @@ import { Scraping } from './entities/scraping.entity'
 
 @Injectable()
 export class ScrapingService {
+  readonly logger = new Logger(ScrapingService.name)
+
   constructor(private readonly em: EntityManager) {}
   async create(createScrapingDto: CreateScrapingDto) {
     const scraping = this.em.create(Scraping, createScrapingDto)
@@ -18,30 +20,34 @@ export class ScrapingService {
   async findAllJobsLinkedin() {
     const crawler = new PlaywrightCrawler({
       launchContext: {
-        launchOptions: {
-          headless: true,
-        },
         userAgent:
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
       },
+      headless: false,
       requestHandler: async ({ page }) => {
-        await page.waitForSelector('.MuiCard-root')
-        const html = await page.content()
-        Logger.debug(html)
-        const containerJobs = await page.$$('.MuiCard-root')
-        const title = await containerJobs[0].$eval(
-          'h6',
-          (el) => el.textContent?.trim() || 'Not title',
-        )
-        Logger.debug({
-          title,
+        await page.waitForSelector('.MuiCard-root', {
+          timeout: 20000,
         })
+        // const selectors = ['order-item-content-img']
+
+        // const description = await page
+        //   .locator('.MuiCard-root p')
+        //   .allTextContents()
+        // const ubication = await page
+        //   .locator('.MuiCardActions-root span')
+        //   .allTextContents()
+        // const time = await page
+        //   .locator('.MuiCardActions-root p')
+        //   .allTextContents()
+
+        // console.log({ titles, description, ubication, time })
       },
       maxRequestsPerCrawl: 1,
     })
+
     await crawler.run([
       {
-        url: 'https://www.laborum.pe/job/Software-Enterprise-Services-S-A-C-/Analista-QA-QC-Junior/67ab119575d1170d056e4ee4?fromAreas=notAvailable&q=software',
+        url: 'https://www.aliexpress.com/p/order/index.html',
       },
     ])
     return {}
