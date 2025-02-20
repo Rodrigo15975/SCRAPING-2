@@ -3,9 +3,10 @@ import { PostgreSqlDriver } from '@mikro-orm/postgresql'
 import { Module } from '@nestjs/common'
 import { ScrapingModule } from './scraping/scraping.module'
 import { ConfigModule } from '@nestjs/config'
-// import { AuthModule } from './auth/auth.module'
+import { AuthModule } from './auth/auth.module'
 @Module({
   imports: [
+    AuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -39,4 +40,4 @@ import { ConfigModule } from '@nestjs/config'
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
