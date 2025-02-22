@@ -1,0 +1,52 @@
+{
+  "requestsFinished": 0,
+  "requestsFailed": 1,
+  "requestsRetries": 1,
+  "requestsFailedPerMinute": 0,
+  "requestsFinishedPerMinute": 0,
+  "requestMinDurationMillis": null,
+  "requestMaxDurationMillis": 0,
+  "requestTotalFailedDurationMillis": 65909,
+  "requestTotalFinishedDurationMillis": 0,
+  "crawlerStartedAt": "2025-02-22T05:13:59.249Z",
+  "crawlerFinishedAt": "2025-02-22T05:19:40.800Z",
+  "statsPersistedAt": "2025-02-22T05:19:40.800Z",
+  "crawlerRuntimeMillis": 341832,
+  "crawlerLastStartTimestamp": 1740201238968,
+  "requestRetryHistogram": [
+    null,
+    null,
+    null,
+    1
+  ],
+  "statsId": 0,
+  "requestAvgFailedDurationMillis": 65909,
+  "requestAvgFinishedDurationMillis": null,
+  "requestTotalDurationMillis": 65909,
+  "requestsTotal": 1,
+  "requestsWithStatusCode": {
+    "200": 3
+  },
+  "errors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\node_modules\\@crawlee\\src\\crawlers\\crawler_utils.ts:13:11": {
+      "missing error code": {
+        "Error": {
+          "Navigation timed out after 60 seconds.": {
+            "count": 1
+          }
+        }
+      }
+    }
+  },
+  "retryErrors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:49:22": {
+      "missing error code": {
+        "TimeoutError": {
+          "page.waitForSelector: Timeout 30000ms exceeded.": {
+            "count": 3
+          }
+        }
+      }
+    }
+  }
+}
