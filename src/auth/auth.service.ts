@@ -1,26 +1,51 @@
-import { Injectable } from '@nestjs/common';
-import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
+import { Injectable } from '@nestjs/common'
+import { JwtService } from '@nestjs/jwt'
+import { encrypt } from './auth.controller'
 
 @Injectable()
 export class AuthService {
-  create(createAuthDto: CreateAuthDto) {
-    return 'This action adds a new auth';
+  constructor(private readonly jwtService: JwtService) {}
+  async login() {
+    const accessToken = await this.jwtService.signAsync(
+      {
+        user_id: '79ca7167-57ca-40ee-8cc1-64f2e3210c2d',
+        email: 'rodrigorumpler@gmail.com',
+        subscription: {
+          name: 'FREE',
+          subscription_id: '3735a629-f091-4c15-979d-cadf08436e0d',
+        },
+        roles: [
+          {
+            name: 'USER',
+            role_id: 1,
+          },
+        ],
+      },
+      { expiresIn: '15m' },
+    )
+    const refreshToken = await this.jwtService.signAsync(
+      {
+        user_id: '79ca7167-57ca-40ee-8cc1-64f2e3210c2d',
+        email: 'rodrigorumpler@gmail.com',
+        subscription: {
+          name: 'FREE',
+          subscription_id: '3735a629-f091-4c15-979d-cadf08436e0d',
+        },
+        roles: [
+          {
+            name: 'USER',
+            role_id: 1,
+          },
+        ],
+      },
+      { expiresIn: '15m' },
+    )
+    const tokenEncrypted = encrypt(accessToken)
+    const refreshTokenEncrypted = encrypt(refreshToken)
+    return {
+      accessToken: tokenEncrypted,
+      refreshToken: refreshTokenEncrypted,
+    }
   }
-
-  findAll() {
-    return `This action returns all auth`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} auth`;
-  }
-
-  update(id: number, updateAuthDto: UpdateAuthDto) {
-    return `This action updates a #${id} auth`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} auth`;
-  }
+  async logout() {}
 }

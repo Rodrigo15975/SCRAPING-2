@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scraping-2
+  labels:
+    app: scraping-2
+    
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scraping-2
+  template:
+    metadata:
+      labels:
+        app: scraping-2
+    spec:
+      containers:
+      - name: scraping-2
+        image: 123456789012.dkr.ecr.us-east-1.amazonaws.com/scraping-2:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

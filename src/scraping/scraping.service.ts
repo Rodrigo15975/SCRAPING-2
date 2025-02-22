@@ -1,15 +1,30 @@
 import { PlaywrightCrawler } from '@crawlee/playwright'
 import { EntityManager } from '@mikro-orm/postgresql'
-import { Injectable, Logger } from '@nestjs/common'
+import { Injectable, Logger, OnModuleInit } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
-// import * as CryptoJS from 'crypto-js'
-// import { KeyValueStore } from 'crawlee'
+
+import {
+  SecretsManagerClient,
+  GetSecretValueCommand,
+} from '@aws-sdk/client-secrets-manager'
 
 @Injectable()
-export class ScrapingService {
-  readonly logger = new Logger(ScrapingService.name)
+export class ScrapingService implements OnModuleInit {
+  private readonly client = new SecretsManagerClient({
+    region: 'us-east-1',
+  })
+  private readonly logger = new Logger(ScrapingService.name)
+  async onModuleInit() {
+    const command = new GetSecretValueCommand({
+      SecretId: process.env.SECRET_ID,
+    })
 
+    const response = await this.client.send(command)
+    this.logger.debug({
+      response,
+    })
+  }
   constructor(private readonly em: EntityManager) {}
   async create(createScrapingDto: CreateScrapingDto) {
     const scraping = this.em.create(Scraping, createScrapingDto)
@@ -25,22 +40,22 @@ export class ScrapingService {
       },
       headless: true,
       requestHandler: async ({ page }) => {
-        const allImgs = await page.locator('.ho_cv').all()
-        const d: any[] = []
-        for (const img of allImgs) {
-          const src = await img.getAttribute('src')
-          d.push(src)
-        }
-        console.log({
-          d,
-        })
+        await page.waitForTimeout(10000)
+        await page.waitForSelector('.f2_cp', { state: 'visible' })
+
+        const title = await page.$eval('.f2_cp a', (el) => ({
+          title: el.textContent,
+          href: el.getAttribute('href'),
+        }))
+        // ak_ap
+        Logger.debug({ title })
       },
       maxRequestsPerCrawl: 1,
     })
 
     await crawler.run([
       {
-        url: 'https://es.aliexpress.com/?spm=a2g0o.order_list.logo.1.21ef194duLFvJG',
+        url: 'https://es.aliexpress.com/?gatewayAdapt=glo2esp',
       },
     ])
     return {}
