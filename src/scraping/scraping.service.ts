@@ -40,8 +40,6 @@ export class ScrapingService implements OnModuleInit {
       },
       headless: true,
       requestHandler: async ({ page }) => {
-        // await page.waitForTimeout(10000)
-        // await page.waitForSelector('.f2_cp', { state: 'visible' })
         const allLinks = await page.$$('.f2_cp a')
         for (const link of allLinks) {
           await link.click()
@@ -51,12 +49,6 @@ export class ScrapingService implements OnModuleInit {
             title,
           })
         }
-        // const links = await page.$$eval('.f2_cp a', (el) =>
-        //   el.map((e) => ({
-        //     hrfe: e.getAttribute('href'),
-        //   })),
-        // )
-        // ak_ap
       },
       maxRequestsPerCrawl: 1,
     })
