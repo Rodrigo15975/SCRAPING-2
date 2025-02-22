@@ -4,27 +4,27 @@ import { Injectable, Logger, OnModuleInit } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
 
-import {
-  SecretsManagerClient,
-  GetSecretValueCommand,
-} from '@aws-sdk/client-secrets-manager'
+// import {
+//   SecretsManagerClient,
+//   GetSecretValueCommand,
+// } from '@aws-sdk/client-secrets-manager'
 
 @Injectable()
 export class ScrapingService implements OnModuleInit {
-  private readonly client = new SecretsManagerClient({
-    region: 'us-east-1',
-  })
+  // private readonly client = new SecretsManagerClient({
+  //   region: 'us-east-1',
+  // })
   private readonly logger = new Logger(ScrapingService.name)
-  async onModuleInit() {
-    const command = new GetSecretValueCommand({
-      SecretId: process.env.SECRET_ID,
-    })
-
-    const response = await this.client.send(command)
-    this.logger.debug({
-      response,
-    })
+  onModuleInit() {
+    //   const command = new GetSecretValueCommand({
+    //     SecretId: process.env.SECRET_ID,
   }
+
+  //   const response = await this.client.send(command)
+  //   this.logger.debug({
+  //     response,
+  //   })
+  // }
   constructor(private readonly em: EntityManager) {}
   async create(createScrapingDto: CreateScrapingDto) {
     const scraping = this.em.create(Scraping, createScrapingDto)
@@ -40,15 +40,28 @@ export class ScrapingService implements OnModuleInit {
       },
       headless: true,
       requestHandler: async ({ page }) => {
-        await page.waitForTimeout(10000)
-        await page.waitForSelector('.f2_cp', { state: 'visible' })
-
-        const title = await page.$eval('.f2_cp a', (el) => ({
-          title: el.textContent,
-          href: el.getAttribute('href'),
-        }))
+        // await page.waitForTimeout(10000)
+        // await page.waitForSelector('.f2_cp', { state: 'visible' })
+        const allLinks = await page.$$('.f2_cp a')
+        for (const link of allLinks) {
+          await link.click()
+          await page.waitForTimeout(10000)
+          await page.waitForSelector('.aec-view productSliderList_6a40c3cf', {
+            state: 'visible',
+          })
+          const containers = await page.$$(
+            '.aec-view productSliderList_6a40c3cf',
+          )
+          this.logger.debug({
+            containers,
+          })
+        }
+        // const links = await page.$$eval('.f2_cp a', (el) =>
+        //   el.map((e) => ({
+        //     hrfe: e.getAttribute('href'),
+        //   })),
+        // )
         // ak_ap
-        Logger.debug({ title })
       },
       maxRequestsPerCrawl: 1,
     })
