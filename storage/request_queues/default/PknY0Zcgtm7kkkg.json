@@ -1,6 +1,6 @@
 {
 	"id": "PknY0Zcgtm7kkkg",
-	"json": "{\"id\":\"PknY0Zcgtm7kkkg\",\"url\":\"https://es.aliexpress.com/?gatewayAdapt=glo2esp\",\"loadedUrl\":\"https://es.aliexpress.com/?gatewayAdapt=glo2esp\",\"uniqueKey\":\"https://es.aliexpress.com?gatewayAdapt=glo2esp\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-02-22T05:24:42.771Z\"}",
+	"json": "{\"id\":\"PknY0Zcgtm7kkkg\",\"url\":\"https://es.aliexpress.com/?gatewayAdapt=glo2esp\",\"loadedUrl\":\"https://es.aliexpress.com/?gatewayAdapt=glo2esp\",\"uniqueKey\":\"https://es.aliexpress.com?gatewayAdapt=glo2esp\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-02-22T05:41:16.853Z\"}",
 	"method": "GET",
 	"orderNo": null,
 	"retryCount": 0,

@@ -41,13 +41,20 @@ export class ScrapingService implements OnModuleInit {
       headless: true,
       requestHandler: async ({ page }) => {
         const allLinks = await page.$$('.f2_cp a')
+
         for (const link of allLinks) {
-          await link.click()
-          await page.waitForTimeout(2000)
-          const title = await page.title()
-          this.logger.debug({
-            title,
-          })
+          // Escuchar si se abre una nueva página
+          const [newPage] = await Promise.all([
+            page.waitForEvent('popup'), // Espera que se abra una nueva pestaña
+            link.click(), // Hace clic en el enlace
+          ])
+
+          await newPage.waitForLoadState() // Espera a que cargue la nueva página
+          const title = await newPage.title() // Obtiene el título de la nueva página
+
+          this.logger.debug({ title })
+
+          await newPage.close() // Cierra la nueva pestaña
         }
       },
       maxRequestsPerCrawl: 1,
@@ -58,6 +65,7 @@ export class ScrapingService implements OnModuleInit {
         url: 'https://es.aliexpress.com/?gatewayAdapt=glo2esp',
       },
     ])
+
     return {}
   }
 
