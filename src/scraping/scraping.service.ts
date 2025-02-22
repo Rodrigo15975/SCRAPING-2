@@ -45,7 +45,7 @@ export class ScrapingService implements OnModuleInit {
         const allLinks = await page.$$('.f2_cp a')
         for (const link of allLinks) {
           await link.click()
-          await page.waitForTimeout(10000)
+          await page.waitForTimeout(8000)
           await page.waitForSelector('.aec-view productSliderList_6a40c3cf', {
             state: 'visible',
           })
