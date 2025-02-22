@@ -51,7 +51,8 @@ export class ScrapingService implements OnModuleInit {
 
           await newPage.waitForLoadState() // Espera a que cargue la nueva página
           const title = await newPage.title() // Obtiene el título de la nueva página
-
+          const container = await newPage.$('.aec-image.pcBgImg_7e54cc08')
+          this.logger.debug({ container })
           this.logger.debug({ title })
 
           await newPage.close() // Cierra la nueva pestaña
