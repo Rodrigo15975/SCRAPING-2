@@ -1,29 +1,53 @@
 {
-  "requestsFinished": 1,
-  "requestsFailed": 0,
-  "requestsRetries": 0,
+  "requestsFinished": 0,
+  "requestsFailed": 1,
+  "requestsRetries": 1,
   "requestsFailedPerMinute": 0,
-  "requestsFinishedPerMinute": 1,
-  "requestMinDurationMillis": 77741,
-  "requestMaxDurationMillis": 77741,
-  "requestTotalFailedDurationMillis": 0,
-  "requestTotalFinishedDurationMillis": 77741,
-  "crawlerStartedAt": "2025-02-22T06:15:58.003Z",
-  "crawlerFinishedAt": "2025-02-22T06:17:20.349Z",
-  "statsPersistedAt": "2025-02-22T06:17:20.349Z",
-  "crawlerRuntimeMillis": 82557,
-  "crawlerLastStartTimestamp": 1740204957792,
+  "requestsFinishedPerMinute": 0,
+  "requestMinDurationMillis": null,
+  "requestMaxDurationMillis": 0,
+  "requestTotalFailedDurationMillis": 41630,
+  "requestTotalFinishedDurationMillis": 0,
+  "crawlerStartedAt": "2025-02-23T05:29:52.968Z",
+  "crawlerFinishedAt": "2025-02-23T05:32:55.043Z",
+  "statsPersistedAt": "2025-02-23T05:32:55.043Z",
+  "crawlerRuntimeMillis": 182129,
+  "crawlerLastStartTimestamp": 1740288592914,
   "requestRetryHistogram": [
+    null,
+    null,
+    null,
+    null,
     1
   ],
   "statsId": 0,
-  "requestAvgFailedDurationMillis": null,
-  "requestAvgFinishedDurationMillis": 77741,
-  "requestTotalDurationMillis": 77741,
+  "requestAvgFailedDurationMillis": 41630,
+  "requestAvgFinishedDurationMillis": null,
+  "requestTotalDurationMillis": 41630,
   "requestsTotal": 1,
   "requestsWithStatusCode": {
-    "200": 1
+    "200": 5
   },
-  "errors": {},
-  "retryErrors": {}
+  "errors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:47:38": {
+      "missing error code": {
+        "TimeoutError": {
+          "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"popup\"": {
+            "count": 1
+          }
+        }
+      }
+    }
+  },
+  "retryErrors": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:47:38": {
+      "missing error code": {
+        "TimeoutError": {
+          "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"popup\"": {
+            "count": 4
+          }
+        }
+      }
+    }
+  }
 }
