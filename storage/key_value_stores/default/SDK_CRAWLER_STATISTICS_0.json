@@ -6,40 +6,41 @@
   "requestsFinishedPerMinute": 0,
   "requestMinDurationMillis": null,
   "requestMaxDurationMillis": 0,
-  "requestTotalFailedDurationMillis": 43463,
+  "requestTotalFailedDurationMillis": 44165,
   "requestTotalFinishedDurationMillis": 0,
-  "crawlerStartedAt": "2025-02-23T05:46:55.592Z",
-  "crawlerFinishedAt": "2025-02-23T05:49:48.747Z",
-  "statsPersistedAt": "2025-02-23T05:49:48.747Z",
-  "crawlerRuntimeMillis": 173259,
-  "crawlerLastStartTimestamp": 1740289615488,
+  "crawlerStartedAt": "2025-02-23T05:58:40.640Z",
+  "crawlerFinishedAt": null,
+  "statsPersistedAt": "2025-02-23T06:01:40.667Z",
+  "crawlerRuntimeMillis": 180166,
+  "crawlerLastStartTimestamp": 1740290320501,
   "requestRetryHistogram": [
+    null,
     null,
     null,
     null,
     1
   ],
   "statsId": 0,
-  "requestAvgFailedDurationMillis": 43463,
+  "requestAvgFailedDurationMillis": 44165,
   "requestAvgFinishedDurationMillis": null,
-  "requestTotalDurationMillis": 43463,
+  "requestTotalDurationMillis": 44165,
   "requestsTotal": 1,
   "requestsWithStatusCode": {
-    "200": 4
+    "200": 5
   },
   "errors": {
-    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:48:18": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:47:38": {
       "missing error code": {
         "TimeoutError": {
           "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"popup\"": {
-            "count": 1
+            "count": 2
           }
         }
       }
     }
   },
   "retryErrors": {
-    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:48:18": {
+    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:47:38": {
       "missing error code": {
         "TimeoutError": {
           "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"popup\"": {
