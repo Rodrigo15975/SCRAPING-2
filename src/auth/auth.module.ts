@@ -4,7 +4,17 @@ import { AuthController } from './auth.controller'
 import { JwtModule } from '@nestjs/jwt'
 
 @Module({
-  imports: [JwtModule.register({ secret: 'hard!to-guess_secret' })],
+  imports: [
+    JwtModule.register({
+      secret: 'hard!to-guess_secret',
+      signOptions: {
+        expiresIn: '20m',
+        algorithm: 'HS256',
+        header: { alg: 'HS256' },
+        subject: 'user',
+      },
+    }),
+  ],
   controllers: [AuthController],
   providers: [AuthService],
 })
