@@ -1,53 +1,29 @@
 {
-  "requestsFinished": 0,
-  "requestsFailed": 1,
-  "requestsRetries": 1,
+  "requestsFinished": 1,
+  "requestsFailed": 0,
+  "requestsRetries": 0,
   "requestsFailedPerMinute": 0,
-  "requestsFinishedPerMinute": 0,
-  "requestMinDurationMillis": null,
-  "requestMaxDurationMillis": 0,
-  "requestTotalFailedDurationMillis": 44165,
-  "requestTotalFinishedDurationMillis": 0,
-  "crawlerStartedAt": "2025-02-23T05:58:40.640Z",
-  "crawlerFinishedAt": null,
-  "statsPersistedAt": "2025-02-23T06:01:40.667Z",
-  "crawlerRuntimeMillis": 180166,
-  "crawlerLastStartTimestamp": 1740290320501,
+  "requestsFinishedPerMinute": 1,
+  "requestMinDurationMillis": 39916,
+  "requestMaxDurationMillis": 39916,
+  "requestTotalFailedDurationMillis": 0,
+  "requestTotalFinishedDurationMillis": 39916,
+  "crawlerStartedAt": "2025-02-23T06:58:25.155Z",
+  "crawlerFinishedAt": "2025-02-23T06:59:07.130Z",
+  "statsPersistedAt": "2025-02-23T06:59:07.130Z",
+  "crawlerRuntimeMillis": 42073,
+  "crawlerLastStartTimestamp": 1740293905057,
   "requestRetryHistogram": [
-    null,
-    null,
-    null,
-    null,
     1
   ],
   "statsId": 0,
-  "requestAvgFailedDurationMillis": 44165,
-  "requestAvgFinishedDurationMillis": null,
-  "requestTotalDurationMillis": 44165,
+  "requestAvgFailedDurationMillis": null,
+  "requestAvgFinishedDurationMillis": 39916,
+  "requestTotalDurationMillis": 39916,
   "requestsTotal": 1,
   "requestsWithStatusCode": {
-    "200": 5
+    "200": 1
   },
-  "errors": {
-    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:47:38": {
-      "missing error code": {
-        "TimeoutError": {
-          "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"popup\"": {
-            "count": 2
-          }
-        }
-      }
-    }
-  },
-  "retryErrors": {
-    "D:\\2025\\SCRAPPING-NESTJS\\scrapping-2\\src\\scraping\\scraping.service.ts:47:38": {
-      "missing error code": {
-        "TimeoutError": {
-          "page.waitForEvent: Timeout 30000ms exceeded while waiting for event \"popup\"": {
-            "count": 3
-          }
-        }
-      }
-    }
-  }
+  "errors": {},
+  "retryErrors": {}
 }

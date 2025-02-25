@@ -44,15 +44,22 @@ export class ScrapingService implements OnModuleInit {
 
         for (const link of allLinks) {
           // Escuchar si se abre una nueva página
-          const newPage = await page.waitForEvent('popup') // Espera que se abra una nueva pestaña
 
-          await link.click({
-            button: 'middle',
-          }) // Hace clic en el enlace
+          const [newPage] = await Promise.all([
+            page.waitForEvent('popup'),
+            link.click(),
+          ]) // Espera que se abra una nueva pestaña
+
           await newPage.waitForLoadState() // Espera a que cargue la nueva página
           const title = await newPage.title() // Obtiene el título de la nueva página
-          const container = await newPage.$('.aec-image.pcBgImg_7e54cc08')
-          this.logger.debug({ container })
+          // const container = await newPage.$('.aec-image.pcBgImg_7e54cc08')
+          const allImgs = await newPage.$$eval(
+            '.aec-view.Wrapper_7e54cc08 .aec-image',
+            (e) => ({
+              img: e.map((img) => img.getAttribute('src')),
+            }),
+          )
+          this.logger.debug({ allImgs })
           this.logger.debug({ title })
 
           await newPage.close() // Cierra la nueva pestaña
