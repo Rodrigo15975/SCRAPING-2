@@ -17,18 +17,6 @@ export class ScrapingService implements OnModuleInit {
     //   const command = new GetSecretValueCommand({
     //     SecretId: process.env.SECRET_ID,
   }
-  ejemplo() {
-    return {
-      message: 'Importante',
-    }
-  }
-
-  ejemplo2() {
-    return {
-      message: 'Importante2',
-    }
-  }
-
   //   const response = await this.client.send(command)
   //   this.logger.debug({
   //     response,
