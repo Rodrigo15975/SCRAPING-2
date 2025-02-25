@@ -23,6 +23,12 @@ export class ScrapingService implements OnModuleInit {
     }
   }
 
+  ejemplo2() {
+    return {
+      message: 'Importante2',
+    }
+  }
+
   //   const response = await this.client.send(command)
   //   this.logger.debug({
   //     response,
