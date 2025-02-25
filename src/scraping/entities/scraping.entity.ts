@@ -12,4 +12,7 @@ export class Scraping {
     columnType: 'text',
   })
   title!: string
+
+  @Property()
+  img!: string
 }
