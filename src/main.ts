@@ -1,7 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import Session from 'supertokens-node/recipe/session'
-// supertokens.config.ts
 import SuperTokens from 'supertokens-node'
 import { middleware } from 'supertokens-node/framework/express'
 
