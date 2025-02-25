@@ -29,4 +29,4 @@ async function bootstrap() {
 }
 bootstrap()
   .then(() => console.log('Server running'))
-  .catch(console.error)
+  .catch(() => console.log('Error'))
