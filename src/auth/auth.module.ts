@@ -13,6 +13,9 @@ import { JwtModule } from '@nestjs/jwt'
         header: { alg: 'HS256' },
         subject: 'user',
       },
+      verifyOptions: {
+        algorithms: ['HS256'],
+      },
     }),
   ],
   controllers: [AuthController],
