@@ -3,12 +3,10 @@ import { EntityManager } from '@mikro-orm/postgresql'
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
-
 // import {
 //   SecretsManagerClient,
 //   GetSecretValueCommand,
 // } from '@aws-sdk/client-secrets-manager'
-
 @Injectable()
 export class ScrapingService implements OnModuleInit {
   // private readonly client = new SecretsManagerClient({
