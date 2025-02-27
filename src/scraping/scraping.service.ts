@@ -28,6 +28,28 @@ export class ScrapingService implements OnModuleInit {
     await this.em.persistAndFlush(scraping)
     return scraping
   }
+  async scrapingIndeed() {
+    const scraping = new PlaywrightCrawler({
+      headless: false,
+      launchContext: {
+        userAgent:
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+      },
+      requestHandler: async ({ page }) => {
+        const title = await page.title()
+
+        console.log({
+          title,
+        })
+      },
+    })
+    await scraping.run([
+      {
+        url: 'https://pe.indeed.com/?from=gnav-jobsearch--indeedmobile',
+      },
+    ])
+    return {}
+  }
 
   async findAllJobsLinkedin() {
     const crawler = new PlaywrightCrawler({
