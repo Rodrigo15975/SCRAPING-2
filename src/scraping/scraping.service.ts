@@ -1,27 +1,12 @@
 import { PlaywrightCrawler } from '@crawlee/playwright'
 import { EntityManager } from '@mikro-orm/postgresql'
-import { Injectable, Logger, OnModuleInit } from '@nestjs/common'
+import { Injectable, Logger } from '@nestjs/common'
 import { CreateScrapingDto } from './dto/create-scraping.dto'
 import { Scraping } from './entities/scraping.entity'
-// import {
-//   SecretsManagerClient,
-//   GetSecretValueCommand,
-// } from '@aws-sdk/client-secrets-manager'
 @Injectable()
-export class ScrapingService implements OnModuleInit {
-  // private readonly client = new SecretsManagerClient({
-  //   region: 'us-east-1',
-  // })
+export class ScrapingService {
   private readonly logger = new Logger(ScrapingService.name)
-  onModuleInit() {
-    //   const command = new GetSecretValueCommand({
-    //     SecretId: process.env.SECRET_ID,
-  }
-  //   const response = await this.client.send(command)
-  //   this.logger.debug({
-  //     response,
-  //   })
-  // }
+
   constructor(private readonly em: EntityManager) {}
   async create(createScrapingDto: CreateScrapingDto) {
     const scraping = this.em.create(Scraping, createScrapingDto)
